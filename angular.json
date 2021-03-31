@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Marvel-databook"
+    }
+  },
+  "defaultProject": "Marvel-databook",
+  "cli": {
+    "analytics": false
+  }
 }
