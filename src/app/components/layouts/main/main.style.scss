@@ -1,5 +1,7 @@
 @import "colors";
 
 #main-wrapper {
-  background-color: $space-cadent;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0deg, $space-cadent 0%, $cultured 100%);
 }
