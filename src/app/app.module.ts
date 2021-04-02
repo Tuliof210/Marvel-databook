@@ -1,5 +1,6 @@
 // Core imports
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 // Default imports
 import { AppRoutingModule } from './app-routing.module';
@@ -11,7 +12,13 @@ import { ViewsModule } from './views/views.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, LayoutsModule, ViewsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    LayoutsModule,
+    ViewsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
