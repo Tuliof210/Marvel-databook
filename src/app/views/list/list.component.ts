@@ -38,19 +38,17 @@ export class ListComponent implements OnInit {
     this.httpService
       .genericGet({
         endpoint: '',
-        params: `orderBy=name&limit=${this.limit}&offset=${
-          this.page * this.limit
-        }`,
+        params: `orderBy=name&limit=${this.limit}&offset=${this.page * this.limit}`,
       })
       .pipe(
-        map((data) => data),
+        map(data => data),
         takeUntil(this._ngUnsubscribe$)
       )
       .subscribe(
         (response: any) => {
           this.formatResponseData(response.data.results);
         },
-        (err) => {
+        err => {
           console.log({ err });
         },
         () => {
@@ -62,7 +60,7 @@ export class ListComponent implements OnInit {
   }
 
   formatResponseData(characters: object[]): void {
-    characters.forEach((character) => {
+    characters.forEach(character => {
       this.marvelCharacters.push({
         id: character['id'],
         name: character['name'],

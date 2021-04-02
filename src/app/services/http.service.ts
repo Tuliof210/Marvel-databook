@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
-import {
-  HttpClient,
-  HttpErrorResponse,
-  HttpHeaders,
-} from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
@@ -21,10 +17,7 @@ interface GenericQuery {
 export class HttpService {
   private readonly apiUrl: string = environment.marvelURI;
 
-  constructor(
-    private readonly http: HttpClient,
-    private readonly hashService: HashService
-  ) {}
+  constructor(private readonly http: HttpClient, private readonly hashService: HashService) {}
 
   genericGet<T>(query: GenericQuery): Observable<T> {
     const secret = this.hashService.createSecretHash();

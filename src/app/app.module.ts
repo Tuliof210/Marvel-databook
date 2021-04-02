@@ -12,13 +12,7 @@ import { ViewsModule } from './views/views.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    LayoutsModule,
-    ViewsModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, LayoutsModule, ViewsModule],
   providers: [],
   bootstrap: [AppComponent],
 })

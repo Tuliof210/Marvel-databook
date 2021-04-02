@@ -14,8 +14,6 @@ export class HashService {
 
   createSecretHash(): string {
     const time = new Date().getTime().toString();
-    return `ts=${time}&apikey=${this.publicKey}&hash=${md5(
-      time + this.privateKey + this.publicKey
-    )}`;
+    return `ts=${time}&apikey=${this.publicKey}&hash=${md5(time + this.privateKey + this.publicKey)}`;
   }
 }
