@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // Custom modules
-import { LayoutsModule } from './components/layouts/layouts.module';
+import { LayoutsModule } from './common/layouts/layouts.module';
 import { ViewsModule } from './views/views.module';
 
 @NgModule({

@@ -1,4 +1,5 @@
-<div *ngFor="let character of marvelCharacters">
-  <p>{{ character.id }} - {{ character.name }}</p>
-  <hr />
+<div id="chars-grid">
+  <div class="char-container" *ngFor="let char of marvelCharacters">
+    <component-card [characterData]="char"></component-card>
+  </div>
 </div>

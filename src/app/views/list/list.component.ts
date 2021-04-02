@@ -2,14 +2,10 @@ import { Component, HostListener, OnInit } from '@angular/core';
 
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
-// services
+// Services
 import { HttpService } from '../../services/http.service';
-
-interface Character {
-  id: number;
-  name: string;
-  thumbNail?: string | boolean;
-}
+// Interfaces
+import { Character } from '../../common/interfaces';
 
 @Component({
   selector: 'view-list',
@@ -19,7 +15,7 @@ interface Character {
 export class ListComponent implements OnInit {
   private readonly _ngUnsubscribe$: Subject<any> = new Subject();
 
-  limit: number = 50;
+  limit: number = 20;
   page: number = 0;
   marvelCharacters: Character[] = [];
 
@@ -53,7 +49,7 @@ export class ListComponent implements OnInit {
         },
         () => {
           this.page++;
-          if (this.page < 3) this.requestMarvelHeroes();
+          if (this.page < 5) this.requestMarvelHeroes();
           else console.log(this.marvelCharacters);
         }
       );
@@ -64,7 +60,7 @@ export class ListComponent implements OnInit {
       this.marvelCharacters.push({
         id: character['id'],
         name: character['name'],
-        thumbNail: character['thumbnail']['path'] || false,
+        thumbNail: `${character['thumbnail']['path']}/portrait_xlarge.${character['thumbnail']['extension']}`,
       });
     });
   }

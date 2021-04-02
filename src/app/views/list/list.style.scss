@@ -1,4 +1,9 @@
-p,
-hr {
-  margin: 0;
+@import 'colors';
+
+#chars-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+}
+.char-container {
+  margin: 10px;
 }
