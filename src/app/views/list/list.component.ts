@@ -53,7 +53,7 @@ export class ListComponent implements OnInit {
         },
         () => {
           this.page++;
-          if (this.page < 6) this.requestMarvelHeroes();
+          if (this.page < 3) this.requestMarvelHeroes();
           else console.log(this.marvelCharacters);
         }
       );
