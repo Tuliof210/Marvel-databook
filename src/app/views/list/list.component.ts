@@ -20,6 +20,7 @@ export class ListComponent implements OnInit {
   private readonly _ngUnsubscribe$: Subject<any> = new Subject();
 
   limit: number = 10;
+  page: number = 0;
   marvelCharacters: Character[] = [];
 
   constructor(private readonly httpService: HttpService) {}
@@ -33,11 +34,13 @@ export class ListComponent implements OnInit {
     this._ngUnsubscribe$.complete();
   }
 
-  requestMarvelHeroes(page: number = 0): void {
+  requestMarvelHeroes(): void {
     this.httpService
       .genericGet({
         endpoint: '',
-        params: `orderBy=name&limit=${this.limit}&offset=${page * this.limit}`,
+        params: `orderBy=name&limit=${this.limit}&offset=${
+          this.page * this.limit
+        }`,
       })
       .pipe(
         map((data) => data),
@@ -51,13 +54,14 @@ export class ListComponent implements OnInit {
           console.log({ err });
         },
         () => {
-          page < 6 ? this.requestMarvelHeroes(++page) : null;
+          this.page++;
+          if (this.page < 5) this.requestMarvelHeroes();
+          else console.log(this.marvelCharacters);
         }
       );
   }
 
   formatResponseData(characters: object[]): void {
-    console.log(characters);
     characters.forEach((character) => {
       this.marvelCharacters.push({
         id: character['id'],
