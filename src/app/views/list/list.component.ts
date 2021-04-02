@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 import { Subject } from 'rxjs';
 import { map, takeUntil } from 'rxjs/operators';
@@ -19,7 +19,7 @@ interface Character {
 export class ListComponent implements OnInit {
   private readonly _ngUnsubscribe$: Subject<any> = new Subject();
 
-  limit: number = 10;
+  limit: number = 50;
   page: number = 0;
   marvelCharacters: Character[] = [];
 
@@ -53,7 +53,7 @@ export class ListComponent implements OnInit {
         },
         () => {
           this.page++;
-          if (this.page < 5) this.requestMarvelHeroes();
+          if (this.page < 6) this.requestMarvelHeroes();
           else console.log(this.marvelCharacters);
         }
       );

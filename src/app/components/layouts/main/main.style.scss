@@ -1,7 +1,6 @@
 @import 'colors';
 
 #main-wrapper {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(0deg, $space-cadent 0%, $cultured 100%);
 }
