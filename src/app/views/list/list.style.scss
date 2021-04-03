@@ -1,9 +1,16 @@
 @import 'colors';
 
-#chars-grid {
+#list-grid {
+  width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 25%);
+  grid-template-columns: repeat(5, 250px);
 }
-.char-content {
-  margin: 10px;
+
+.list-wrapper {
+  width: 1250px;
+  margin: auto;
+}
+
+.list-content {
+  margin: 15px;
 }
