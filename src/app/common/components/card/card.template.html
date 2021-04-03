@@ -1,5 +1,10 @@
 <div class="card-content">
-  <img class="card-thumbnail" [src]="characterData.thumbNail" [alt]="characterData.name" />
+  <div class="card-thumbnail">
+    <img [src]="characterData.thumbNail" [alt]="characterData.name" />
+    <div class="card-details">
+      <h2>see details</h2>
+    </div>
+  </div>
   <div class="card-header">
     <h3>{{ characterData.name }}</h3>
   </div>

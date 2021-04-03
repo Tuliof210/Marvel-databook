@@ -1,0 +1,25 @@
+@keyframes filter-gray {
+  0% {
+    filter: grayscale(0);
+  }
+  50% {
+    filter: grayscale(50%);
+  }
+  75% {
+    filter: grayscale(90%);
+  }
+  100% {
+    filter: grayscale(100%);
+  }
+}
+@keyframes filter-blur {
+  0% {
+    filter: blur(0);
+  }
+  50% {
+    filter: blur(1px);
+  }
+  100% {
+    filter: blur(2px);
+  }
+}

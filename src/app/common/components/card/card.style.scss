@@ -1,11 +1,32 @@
 @import 'colors';
 @import 'fonts';
+@import 'animations';
 
 .card-content {
   cursor: pointer;
   background-color: $space-cadent;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px -5px $gray-web;
 
-  border-radius: 15px;
+  .card-thumbnail {
+    .card-details {
+      opacity: 0;
+    }
+  }
+  transition-property: visibility;
+  transition-duration: 500ms;
+}
+
+.card-content:hover,
+.card-content:active {
+  .card-thumbnail {
+    .card-details {
+      opacity: 1;
+    }
+    img {
+      animation: filter-gray 500ms forwards;
+    }
+  }
 }
 
 .card-header {
@@ -18,16 +39,38 @@
     margin: 0;
     text-align: center;
     color: $cultured;
-    font-family: 'BebasNeue';
+    text-shadow: 1px 1px $apple-red;
+    font-family: 'BebasNeue', sans-serif;
     font-size: 20px;
     line-height: 1;
-    text-shadow: 1px 1px $apple-red;
   }
 }
 
 .card-thumbnail {
+  position: relative;
   width: 100%;
-  height: auto;
-
-  border-radius: 15px 15px 0 0;
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+  }
+}
+.card-details {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition-property: opacity;
+  transition-duration: 500ms;
+  h2 {
+    color: $cultured;
+    text-shadow: 3px 3px $apple-red;
+    font-family: 'BebasNeue', sans-serif;
+    font-size: 45px;
+    line-height: 1;
+    letter-spacing: 2px;
+    text-align: center;
+    margin: 0;
+  }
 }
