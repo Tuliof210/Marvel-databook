@@ -18,8 +18,11 @@ export class ListComponent implements OnInit {
   total: number = 0;
   limit: number = 10;
   page: number = 0;
-  orderBy: string = '-modified';
-  query: string = '';
+
+  query = {
+    nameStartsWith: '',
+    orderBy: '-modified',
+  };
 
   marvelCharacters: Character[] = [];
 
@@ -56,7 +59,9 @@ export class ListComponent implements OnInit {
     this.httpService
       .genericGet({
         endpoint: '',
-        params: `${this.query}orderBy=${this.orderBy}&limit=${this.limit}&offset=${this.page * this.limit}`,
+        params: `${this.query.nameStartsWith}&orderBy=${this.query.orderBy}&limit=${this.limit}&offset=${
+          this.page * this.limit
+        }`,
       })
       .pipe(
         map(data => data),
@@ -102,15 +107,22 @@ export class ListComponent implements OnInit {
   }
 
   // Handle filters
-  searchTerm(e) {
-    this.resetRequests(`nameStartsWith=${e}&`);
-    this.requestMarvelCharacters();
+  catchFilters(filter) {
+    console.log(filter);
+    if (!this.sameFilter(filter)) {
+      this.resetRequests(filter);
+      this.requestMarvelCharacters();
+    }
   }
 
-  resetRequests(query: string) {
+  resetRequests(filter: any) {
     this.page = 0;
     this.total = 0;
-    this.query = query;
     this.marvelCharacters = [];
+    this.query = { ...filter };
+  }
+
+  sameFilter(filter) {
+    return this.query['nameStartsWith'] === filter['nameStartsWith'] && this.query['orderBy'] === filter['orderBy'];
   }
 }

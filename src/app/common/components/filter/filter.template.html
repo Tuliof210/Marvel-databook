@@ -1,7 +1,25 @@
 <div id="filter-wrapper">
   <div id="filter-search" class="flex-container">
     <input type="text" name="search" [(ngModel)]="textValue" class="filter-input" />
-    <button (click)="sendValue()" class="default-btn search-btn">Find</button>
+    <button (click)="sendKeyWord()" class="default-btn search-btn">Find</button>
   </div>
-  <div *ngIf="currentSearch" id="filter-controll" class="flex-container">{{ currentSearch }}</div>
+  <div id="filter-controll" class="flex-container">
+    <label *ngIf="currentFilter.nameStartsWith" (click)="resetSearchTerm()">{{ displayQuery }}</label>
+    <div class="flex-container">
+      <button class="default-btn" (click)="changeOrderBy(false)" [ngClass]="{'btn-on': !updated, 'btn-off': updated}">
+        A-Z
+      </button>
+      <button class="default-btn" (click)="changeOrderBy(true)" [ngClass]="{'btn-on': updated, 'btn-off': !updated}">
+        Popular
+      </button>
+    </div>
+    <div class="flex-container">
+      <button class="default-btn" (click)="changeDownUpOrder(false)" [ngClass]="{'btn-on': !desc, 'btn-off': desc}">
+        asc
+      </button>
+      <button class="default-btn" (click)="changeDownUpOrder(true)" [ngClass]="{'btn-on': desc, 'btn-off': !desc}">
+        desc
+      </button>
+    </div>
+  </div>
 </div>
