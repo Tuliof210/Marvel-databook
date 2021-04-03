@@ -1,5 +1,5 @@
 <div id="chars-grid">
   <div class="char-container" *ngFor="let char of marvelCharacters">
-    <component-card [characterData]="char"></component-card>
+    <component-card [characterData]="char" (click)="seeMore(char.id)"></component-card>
   </div>
 </div>

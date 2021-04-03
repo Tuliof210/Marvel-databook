@@ -14,8 +14,8 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       { path: '', component: HomeComponent },
-      { path: 'lista', component: ListComponent },
-      { path: 'sobre/:id', component: DetailsComponent },
+      { path: 'list', component: ListComponent },
+      { path: 'details/:id', component: DetailsComponent },
     ],
   },
   { path: '**', redirectTo: '' },

@@ -9,11 +9,6 @@ import { Character } from '../../interfaces';
 })
 export class CardComponent implements OnInit {
   @Input() characterData: Character;
-  undefinedCharacter: Character = {
-    id: 0,
-    name: '',
-    thumbNail: '',
-  };
 
   constructor() {}
 
