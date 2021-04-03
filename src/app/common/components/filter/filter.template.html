@@ -1,0 +1,7 @@
+<div id="filter-wrapper">
+  <div id="filter-search" class="flex-container">
+    <input type="text" name="search" [(ngModel)]="textValue" class="filter-input" />
+    <button (click)="sendValue()" class="default-btn search-btn">Find</button>
+  </div>
+  <div *ngIf="currentSearch" id="filter-controll" class="flex-container">{{ currentSearch }}</div>
+</div>

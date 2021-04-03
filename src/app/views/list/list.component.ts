@@ -15,16 +15,17 @@ import { Character } from '../../common/interfaces';
 export class ListComponent implements OnInit {
   private readonly _ngUnsubscribe$: Subject<any> = new Subject();
 
-  delayRef: number = 50;
-
+  total: number = 0;
   limit: number = 10;
   page: number = 0;
   orderBy: string = '-modified';
+  query: string = '';
 
   marvelCharacters: Character[] = [];
 
   showBTN: boolean = false;
   inRequestProcess: boolean = false;
+  delayRef: number = 50;
 
   constructor(private readonly router: Router, private readonly httpService: HttpService) {}
 
@@ -41,12 +42,21 @@ export class ListComponent implements OnInit {
     this.router.navigate(['/details/' + id]);
   }
 
-  requestMarvelCharacters(): void {
+  beforeRequest(): void {
     this.inRequestProcess = true;
+  }
+  afterRequest(): void {
+    this.page++;
+    this.showBTN = false;
+    this.inRequestProcess = false;
+  }
+
+  requestMarvelCharacters(): void {
+    this.beforeRequest();
     this.httpService
       .genericGet({
         endpoint: '',
-        params: `orderBy=${this.orderBy}&limit=${this.limit}&offset=${this.page * this.limit}`,
+        params: `${this.query}orderBy=${this.orderBy}&limit=${this.limit}&offset=${this.page * this.limit}`,
       })
       .pipe(
         map(data => data),
@@ -54,13 +64,12 @@ export class ListComponent implements OnInit {
       )
       .subscribe(
         (characters: any) => {
-          this.page++;
-          this.showBTN = false;
-          this.inRequestProcess = false;
+          this.total = characters['data']['total'];
+          this.afterRequest();
 
           characters['data']['results'].forEach((character, i) => this.lazyDisplayData(character, this.delayRef * i));
           setTimeout(() => {
-            this.showBTN = true;
+            this.showBTN = this.marvelCharacters.length < this.total;
           }, this.delayRef * characters['data']['results'].length);
         },
         err => {
@@ -90,5 +99,18 @@ export class ListComponent implements OnInit {
       ? thumb['path'] + '/' + variant + '.' + thumb['extension']
       : 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available/' + variant + '.jpg';
     // List of Image Variants https://developer.marvel.com/documentation/images
+  }
+
+  // Handle filters
+  searchTerm(e) {
+    this.resetRequests(`nameStartsWith=${e}&`);
+    this.requestMarvelCharacters();
+  }
+
+  resetRequests(query: string) {
+    this.page = 0;
+    this.total = 0;
+    this.query = query;
+    this.marvelCharacters = [];
   }
 }
