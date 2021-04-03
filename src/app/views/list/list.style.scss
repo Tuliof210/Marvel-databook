@@ -20,7 +20,7 @@ $ref-columns: 5;
 }
 
 @media screen and (max-width: 1550px) {
-  $ref-grid: 1100px;
+  $ref-grid: 1200px;
   $ref-columns: 5;
 
   .list-wrapper {
@@ -35,7 +35,7 @@ $ref-columns: 5;
 }
 
 @media screen and (max-width: 1250px) {
-  $ref-grid: 900px;
+  $ref-grid: 1000px;
   $ref-columns: 4;
 
   .list-wrapper {
@@ -50,8 +50,8 @@ $ref-columns: 5;
 }
 
 @media screen and (max-width: 1050px) {
-  $ref-grid: 700px;
-  $ref-columns: 3;
+  $ref-grid: 800px;
+  $ref-columns: 4;
 
   .list-wrapper {
     width: 100%;
@@ -65,7 +65,7 @@ $ref-columns: 5;
 }
 
 @media screen and (max-width: 850px) {
-  $ref-grid: 600px;
+  $ref-grid: 650px;
   $ref-columns: 3;
 
   .list-wrapper {
@@ -79,9 +79,39 @@ $ref-columns: 5;
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 700px) {
   $ref-grid: 500px;
   $ref-columns: 2;
+
+  .list-wrapper {
+    width: 100%;
+    margin: auto;
+  }
+
+  .list-grid {
+    width: $ref-grid;
+    grid-template-columns: repeat($ref-columns, $ref-grid / $ref-columns);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  $ref-grid: 400px;
+  $ref-columns: 2;
+
+  .list-wrapper {
+    width: 100%;
+    margin: auto;
+  }
+
+  .list-grid {
+    width: $ref-grid;
+    grid-template-columns: repeat($ref-columns, $ref-grid / $ref-columns);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  $ref-grid: 250px;
+  $ref-columns: 1;
 
   .list-wrapper {
     width: 100%;

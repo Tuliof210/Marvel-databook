@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
 
   delayRef: number = 50;
 
-  limit: number = 20;
+  limit: number = 60;
   page: number = 0;
   orderBy: string = '-modified';
 
