@@ -7,10 +7,8 @@ import { catchError, map } from 'rxjs/operators';
 import { HashService } from './hash.service';
 import { environment } from '../../environments/environment';
 
-interface GenericQuery {
-  endpoint: string;
-  params: string;
-}
+import { GenericQuery } from '../common/interfaces';
+
 @Injectable({
   providedIn: 'root',
 })
