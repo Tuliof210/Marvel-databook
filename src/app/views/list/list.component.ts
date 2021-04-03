@@ -15,6 +15,8 @@ import { Character } from '../../common/interfaces';
 export class ListComponent implements OnInit {
   private readonly _ngUnsubscribe$: Subject<any> = new Subject();
 
+  delayRef: number = 50;
+
   limit: number = 20;
   page: number = 0;
   orderBy: string = '-modified';
@@ -48,12 +50,8 @@ export class ListComponent implements OnInit {
       )
       .subscribe(
         (characters: any) => {
-          characters['data']['results'].forEach(character => {
-            this.marvelCharacters.push({
-              id: character['id'],
-              name: character['name'] || 'Unknown',
-              thumbNail: this.getImageLink(character['thumbnail'], 'standard_xlarge'),
-            });
+          characters['data']['results'].forEach((character, i) => {
+            this.lazyDisplayData(character, this.delayRef * i);
           });
         },
         err => {
@@ -63,6 +61,16 @@ export class ListComponent implements OnInit {
           this.page++;
         }
       );
+  }
+
+  lazyDisplayData(character, delay) {
+    setTimeout(() => {
+      this.marvelCharacters.push({
+        id: character['id'],
+        name: character['name'] || 'Unknown',
+        thumbNail: this.getImageLink(character['thumbnail'], 'standard_xlarge'),
+      });
+    }, delay);
   }
 
   getImageLink(thumb: any, variant: string): string {
