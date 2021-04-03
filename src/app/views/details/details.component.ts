@@ -69,7 +69,6 @@ export class DetailsComponent implements OnInit {
               comics: [],
               events: [],
             };
-            console.log({ character: new Date().getTime() });
           },
           err => console.log({ err }),
           () => {
@@ -100,7 +99,6 @@ export class DetailsComponent implements OnInit {
               link: item.urls ? item.urls[0]['url'] : '',
             });
           });
-          console.log({ [typeofData]: new Date().getTime() });
         },
         err => console.log({ err }),
         () => {
