@@ -35,15 +35,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 50px;
+  min-height: 60px;
 
   h3 {
     margin: 0;
+    width: 95%;
     text-align: center;
     color: $cultured;
     text-shadow: 1px 1px $apple-red;
     font-family: 'BebasNeue', sans-serif;
-    font-size: 20px;
+    font-size: 25px;
     line-height: 1;
   }
 }
@@ -74,5 +75,55 @@
     letter-spacing: 2px;
     text-align: center;
     margin: 0;
+  }
+}
+
+@media screen and (max-width: 1550px) {
+  .card-details h2 {
+    font-size: 35px;
+  }
+  .card-header {
+    h3 {
+      font-size: 23px;
+    }
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .card-header {
+    h3 {
+      font-size: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  .card-header {
+    min-height: 40px;
+    h3 {
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .card-details h2 {
+    font-size: 30px;
+  }
+  .card-header {
+    h3 {
+      font-size: 15px;
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .card-details h2 {
+    font-size: 30px;
+  }
+  .card-header {
+    h3 {
+      font-size: 15px;
+    }
   }
 }
