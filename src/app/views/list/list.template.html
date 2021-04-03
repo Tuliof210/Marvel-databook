@@ -1,5 +1,5 @@
 <div *ngIf="marvelCharacters.length" class="list-wrapper">
-  <div id="list-grid">
+  <div class="list-grid">
     <div class="list-content" *ngFor="let char of marvelCharacters">
       <component-card [characterData]="char" (click)="seeMore(char.id)"></component-card>
     </div>

@@ -1,16 +1,15 @@
 @import 'colors';
 
-#list-grid {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 250px);
-}
-
 .list-wrapper {
-  width: 1250px;
+  width: 1500px;
   margin: auto;
 }
 
+.list-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 300px);
+}
+
 .list-content {
-  margin: 15px;
+  margin: 20px;
 }

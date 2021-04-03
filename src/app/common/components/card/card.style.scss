@@ -1,13 +1,33 @@
 @import 'colors';
+@import 'fonts';
 
 .card-content {
-  color: $cultured;
-  background-color: $gray-web;
-  border: 2px solid $space-cadent;
-  //------
   cursor: pointer;
+  background-color: $space-cadent;
+
+  border-radius: 15px;
 }
+
+.card-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+
+  h3 {
+    margin: 0;
+    text-align: center;
+    color: $cultured;
+    font-family: 'BebasNeue';
+    font-size: 20px;
+    line-height: 1;
+    text-shadow: 1px 1px $apple-red;
+  }
+}
+
 .card-thumbnail {
   width: 100%;
   height: auto;
+
+  border-radius: 15px 15px 0 0;
 }
