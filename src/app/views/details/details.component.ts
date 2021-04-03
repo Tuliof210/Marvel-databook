@@ -17,7 +17,7 @@ export class DetailsComponent implements OnInit {
 
   limit: number = 20;
   page: number = 0;
-  orderBy: string = 'modified';
+  orderBy: string = '-modified';
 
   id: string;
   character: FullCharacter;

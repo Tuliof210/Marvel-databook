@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
 
   limit: number = 20;
   page: number = 0;
-  orderBy: string = 'name';
+  orderBy: string = '-modified';
 
   marvelCharacters: Character[] = [];
 
@@ -58,6 +58,9 @@ export class ListComponent implements OnInit {
         },
         err => {
           console.log({ err });
+        },
+        () => {
+          this.page++;
         }
       );
   }
