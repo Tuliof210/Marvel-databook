@@ -1,0 +1,19 @@
+@import 'colors';
+@import 'fonts';
+@import 'animations';
+
+.default-btn {
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  //----------------------
+  color: $cultured;
+  font-family: 'BebasNeue', sans-serif;
+  background-color: $apple-red;
+  //----------------------
+  -webkit-animation: slide-up 1.5s ease;
+  animation: slide-up 1.5s ease;
+  cursor: pointer;
+}

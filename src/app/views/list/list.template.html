@@ -1,10 +1,10 @@
 <div *ngIf="marvelCharacters.length" class="list-wrapper">
   <div class="list-grid">
-    <div class="list-content" *ngFor="let char of marvelCharacters">
+    <div *ngFor="let char of marvelCharacters" class="list-content">
       <component-card [characterData]="char" (click)="seeMore(char.id)"></component-card>
     </div>
   </div>
-  <div class="btn-row">
-    <button (click)="requestMarvelCharacters()">See More</button>
+  <div class="list-footer">
+    <button *ngIf="showBTN" (click)="requestMarvelCharacters()" class="default-btn loadmore-btn">See More</button>
   </div>
 </div>

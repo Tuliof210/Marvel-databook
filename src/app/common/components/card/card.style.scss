@@ -6,16 +6,17 @@
   cursor: pointer;
   background-color: $space-cadent;
   border-radius: 10px;
-  box-shadow: 10px 10px 15px -5px $gray-web;
+  box-shadow: 7px 7px 15px 0px rgb(0, 0, 0, 0.3);
 
   .card-thumbnail {
     .card-details {
       opacity: 0;
     }
   }
-  transition-property: visibility;
+  transition-property: all;
   transition-duration: 500ms;
 
+  -webkit-animation: slide-up 1.5s ease;
   animation: slide-up 1.5s ease;
 }
 
@@ -26,12 +27,13 @@
       opacity: 1;
     }
     img {
+      -webkit-animation: filter-gray 500ms forwards;
       animation: filter-gray 500ms forwards;
     }
   }
 }
 
-.card-header {
+.card-footer {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -42,7 +44,7 @@
     width: 95%;
     text-align: center;
     color: $cultured;
-    text-shadow: 1px 1px $apple-red;
+    text-shadow: 1px 1px $yale-blue;
     font-family: 'BebasNeue', sans-serif;
     font-size: 25px;
     line-height: 1;
@@ -82,7 +84,7 @@
   .card-details h2 {
     font-size: 35px;
   }
-  .card-header {
+  .card-footer {
     h3 {
       font-size: 23px;
     }
@@ -90,7 +92,7 @@
 }
 
 @media screen and (max-width: 1250px) {
-  .card-header {
+  .card-footer {
     h3 {
       font-size: 20px;
     }
@@ -101,7 +103,7 @@
   .card-details h2 {
     font-size: 30px;
   }
-  .card-header {
+  .card-footer {
     min-height: 40px;
     h3 {
       font-size: 18px;
@@ -113,7 +115,7 @@
   .card-details h2 {
     font-size: 35px;
   }
-  .card-header {
+  .card-footer {
     h3 {
       font-size: 15px;
     }
@@ -124,7 +126,7 @@
   .card-details h2 {
     font-size: 30px;
   }
-  .card-header {
+  .card-footer {
     h3 {
       font-size: 15px;
     }

@@ -17,11 +17,14 @@ export class ListComponent implements OnInit {
 
   delayRef: number = 50;
 
-  limit: number = 60;
+  limit: number = 10;
   page: number = 0;
   orderBy: string = '-modified';
 
   marvelCharacters: Character[] = [];
+
+  showBTN: boolean = false;
+  inRequestProcess: boolean = false;
 
   constructor(private readonly router: Router, private readonly httpService: HttpService) {}
 
@@ -39,6 +42,7 @@ export class ListComponent implements OnInit {
   }
 
   requestMarvelCharacters(): void {
+    this.showBTN = false;
     this.httpService
       .genericGet({
         endpoint: '',
@@ -50,15 +54,14 @@ export class ListComponent implements OnInit {
       )
       .subscribe(
         (characters: any) => {
-          characters['data']['results'].forEach((character, i) => {
-            this.lazyDisplayData(character, this.delayRef * i);
-          });
+          this.page++;
+          characters['data']['results'].forEach((character, i) => this.lazyDisplayData(character, this.delayRef * i));
+          setTimeout(() => {
+            this.showBTN = true;
+          }, this.delayRef * characters['data']['results'].length);
         },
         err => {
           console.log({ err });
-        },
-        () => {
-          this.page++;
         }
       );
   }
@@ -70,6 +73,12 @@ export class ListComponent implements OnInit {
         name: character['name'] || 'Unknown',
         thumbNail: this.getImageLink(character['thumbnail'], 'standard_xlarge'),
       });
+    }, delay);
+  }
+
+  displayBtn(delay) {
+    setTimeout(() => {
+      this.showBTN = true;
     }, delay);
   }
 

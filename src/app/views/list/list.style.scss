@@ -1,4 +1,5 @@
 @import 'colors';
+@import 'elements';
 
 $ref-grid: 1500px;
 $ref-columns: 5;
@@ -19,6 +20,20 @@ $ref-columns: 5;
   padding: 20px;
 }
 
+.list-footer {
+  text-align: center;
+}
+.loadmore-btn {
+  margin: 30px 0 50px;
+  width: 150px;
+  height: 50px;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+//===========================================================================
+// Media Queries
+//===========================================================================
 @media screen and (max-width: 1550px) {
   $ref-grid: 1200px;
   $ref-columns: 5;
