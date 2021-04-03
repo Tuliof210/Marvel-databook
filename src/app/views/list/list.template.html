@@ -5,6 +5,8 @@
     </div>
   </div>
   <div class="list-footer">
-    <button *ngIf="showBTN" (click)="requestMarvelCharacters()" class="default-btn loadmore-btn">See More</button>
+    <button *ngIf="showBTN" (click)="requestMarvelCharacters()" class="default-btn loadmore-btn">
+      <div [ngClass]="{'loader': inRequestProcess}">{{ inRequestProcess ? '' : 'See More' }}</div>
+    </button>
   </div>
 </div>

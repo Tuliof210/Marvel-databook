@@ -42,7 +42,7 @@ export class ListComponent implements OnInit {
   }
 
   requestMarvelCharacters(): void {
-    this.showBTN = false;
+    this.inRequestProcess = true;
     this.httpService
       .genericGet({
         endpoint: '',
@@ -55,6 +55,9 @@ export class ListComponent implements OnInit {
       .subscribe(
         (characters: any) => {
           this.page++;
+          this.showBTN = false;
+          this.inRequestProcess = false;
+
           characters['data']['results'].forEach((character, i) => this.lazyDisplayData(character, this.delayRef * i));
           setTimeout(() => {
             this.showBTN = true;

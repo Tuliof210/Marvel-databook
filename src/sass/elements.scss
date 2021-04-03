@@ -3,6 +3,8 @@
 @import 'animations';
 
 .default-btn {
+  cursor: pointer;
+  position: relative;
   outline: none;
   border: none;
   margin: 0;
@@ -15,5 +17,30 @@
   //----------------------
   -webkit-animation: slide-up 1.5s ease;
   animation: slide-up 1.5s ease;
-  cursor: pointer;
+
+  transition-property: all;
+  transition-duration: 300ms;
+}
+.default-btn:hover {
+  filter: brightness(0.8);
+}
+
+.loader {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top: 2px solid $cultured;
+  border-left: 2px solid $cultured;
+
+  width: 20px;
+  height: 20px;
+
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
 }
