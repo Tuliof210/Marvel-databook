@@ -1,24 +1,108 @@
 @import 'elements';
 
+#filter-wrapper {
+  background-color: $space-cadent;
+  padding: 50px 0 25px;
+  margin-bottom: 25px;
+}
+
 #filter-search {
   width: 100%;
 }
+
+.filter-input {
+  height: 40px;
+  width: 20%;
+  min-width: 230px;
+  box-sizing: border-box;
+  border-radius: 25px 0 0 25px;
+
+  box-shadow: 5px 3px 15px 0px rgb(0, 0, 0, 0.1);
+  border: 2px solid $apple-red;
+  color: $gray-web;
+  font-family: 'ComicNeue-Regular', sans-serif;
+  font-size: 25px;
+  line-height: 1;
+}
+
 .flex-container {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .search-btn {
+  height: 40px;
+  width: 40px;
+  border-radius: 0 25px 25px 0;
   font-size: 20px;
   padding: 0 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 5px 3px 15px 0px rgb(0, 0, 0, 0.1);
+  background-color: $apple-red;
+}
+.twin-row {
+  margin: 20px 5px;
+}
+.twin-btn-01,
+.twin-btn-02 {
+  padding: 1px;
+  height: 30px;
+  max-width: 60px;
+  min-width: 60px;
+  font-size: 15px;
+  box-sizing: border-box;
+  border: 1px solid $apple-red;
+  transition-property: all;
+  transition-duration: 0.5s;
+}
+
+.twin-btn-01 {
+  border-radius: 15px 0 0 15px;
+}
+.twin-btn-02 {
+  border-radius: 0 15px 15px 0;
 }
 
 .btn-on {
   color: $cultured;
   background-color: $apple-red;
 }
-
 .btn-off {
   color: $space-cadent;
   background-color: $cultured;
+}
+
+.search-flag {
+  .label-search,
+  .clear-search {
+    box-sizing: border-box;
+    height: 30px;
+  }
+
+  .label-search:hover,
+  .clear-search:hover {
+    filter: brightness(1);
+  }
+
+  .label-search {
+    padding: 0 10px;
+    font-size: 20px;
+    //font-family: 'ComicNeue-Regular', sans-serif;
+    border-radius: 15px 0 0 15px;
+  }
+  .clear-search {
+    display: flex;
+    align-items: center;
+    padding: 0 3px 0;
+
+    border-radius: 0 15px 15px 0;
+    img {
+      width: 25px;
+    }
+  }
 }

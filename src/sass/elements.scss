@@ -19,7 +19,14 @@
   transition-duration: 300ms;
 }
 .default-btn:hover {
-  filter: brightness(0.8);
+  filter: brightness(0.9);
+  box-shadow: 5px 3px 15px 0px rgb(0, 0, 0, 0.2);
+}
+
+.default-input {
+  outline: none;
+  border: none;
+  padding: 0 20px;
 }
 
 .loader {

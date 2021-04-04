@@ -16,7 +16,7 @@ export class ListComponent implements OnInit {
   private readonly _ngUnsubscribe$: Subject<any> = new Subject();
 
   total: number = 0;
-  limit: number = 10;
+  limit: number = 60;
   page: number = 0;
 
   query = {
