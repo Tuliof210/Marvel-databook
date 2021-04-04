@@ -9,4 +9,8 @@ export class HomeComponent implements OnInit {
   constructor(private readonly router: Router) {}
 
   ngOnInit(): void {}
+
+  start(): void {
+    this.router.navigate(['/list']);
+  }
 }
