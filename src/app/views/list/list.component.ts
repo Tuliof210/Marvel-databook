@@ -24,6 +24,7 @@ export class ListComponent implements OnInit {
     orderBy: '-modified',
   };
 
+  notFound: boolean;
   marvelCharacters: Character[] = [];
 
   showBTN: boolean = false;
@@ -46,6 +47,7 @@ export class ListComponent implements OnInit {
   }
 
   beforeRequest(): void {
+    this.notFound = false;
     this.inRequestProcess = true;
   }
   afterRequest(): void {
@@ -79,6 +81,11 @@ export class ListComponent implements OnInit {
         },
         err => {
           console.log({ err });
+        },
+        () => {
+          setTimeout(() => {
+            if (this.marvelCharacters.length === 0) this.notFound = true;
+          }, 100);
         }
       );
   }

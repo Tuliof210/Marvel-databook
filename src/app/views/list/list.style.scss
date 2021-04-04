@@ -30,9 +30,22 @@ $ref-columns: 5;
   font-size: 30px;
   line-height: 1.1;
   //----------------------
-
   -webkit-animation: slide-up 1.5s ease;
   animation: slide-up 1.5s ease;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found {
+  margin: 50px 0;
+  width: 20%;
+  //----------------------
+  -webkit-animation: slide-up-no-opactity 1.5s forwards;
+  animation: slide-up-no-opactity 1.5s forwards;
 }
 
 //===========================================================================
