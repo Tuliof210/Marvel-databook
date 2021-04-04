@@ -115,7 +115,6 @@ export class ListComponent implements OnInit {
 
   // Handle filters
   catchFilters(filter) {
-    console.log(filter);
     if (!this.sameFilter(filter)) {
       this.resetRequests(filter);
       this.requestMarvelCharacters();

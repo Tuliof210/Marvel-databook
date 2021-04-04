@@ -26,10 +26,8 @@ export class HttpService {
     const dataFromCache = this.responseCache.get(URL);
 
     if (dataFromCache) {
-      console.log('return from cache');
       return of(dataFromCache);
     } else {
-      console.log('return from API');
       const secret = this.hashService.createSecretHash();
       const FULL_URL = query.params ? `${URL}&${secret}` : `${URL}?${secret}`;
 

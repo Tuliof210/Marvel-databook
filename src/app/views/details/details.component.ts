@@ -72,7 +72,6 @@ export class DetailsComponent implements OnInit {
           },
           err => console.log({ err }),
           () => {
-            console.log({ character: this.character });
             resolve();
           }
         )
@@ -100,10 +99,7 @@ export class DetailsComponent implements OnInit {
             });
           });
         },
-        err => console.log({ err }),
-        () => {
-          console.log({ [typeofData]: this.character[typeofData] });
-        }
+        err => console.log({ err })
       );
   }
 
