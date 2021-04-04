@@ -63,7 +63,7 @@ export class DetailsComponent implements OnInit {
             this.character = {
               id: character.id,
               name: character.name || 'Unknown',
-              thumbNail: this.getImageLink(character['thumbnail'], 'detail'),
+              thumbNail: this.getImageLink(character['thumbnail'], 'standard_fantastic'),
               description: character.description || 'There is no description available for this character',
               link: character.urls ? character.urls[0]['url'] : '',
               comics: [],
