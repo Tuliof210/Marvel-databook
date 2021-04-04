@@ -1,24 +1,30 @@
 <div *ngIf="character">
-  <div>
-    <h1>{{ character.name }}</h1>
-    <img [src]="character.thumbNail" [alt]="character.name" />
-    <h2>{{ character.description }}</h2>
-    <h3 (click)="openRedirect(character.link)"></h3>
-  </div>
-  <hr />
-  <h2>List of Comics</h2>
-  <div *ngIf="character.comics.length" class="flex-wrapper">
-    <div *ngFor="let comic of character.comics" (click)="openRedirect(comic.link)" class="content">
-      <p>{{ comic.title }}</p>
-      <img [src]="comic.thumbNail" [alt]="comic.title" />
+  <div class="details-character">
+    <div class="details-header">
+      <h1 class="details-title">{{ character.name }}</h1>
+      <img class="details-picture" [src]="character.thumbNail" [alt]="character.name" />
+      <h2 class="details-description">{{ character.description }}</h2>
+      <h3 (click)="openRedirect(character.link)"></h3>
     </div>
   </div>
-  <hr />
-  <h2>List of Events</h2>
-  <div *ngIf="character.events.length" class="flex-wrapper">
-    <div *ngFor="let hqEvent of character.events" (click)="openRedirect(hqEvent.link)" class="content">
-      <p>{{ hqEvent.title }}</p>
-      <img [src]="hqEvent.thumbNail" [alt]="hqEvent.title" />
+
+  <div *ngIf="character.comics.length" class="details-row">
+    <h2 class="details-title">List of Comics</h2>
+    <div class="flex-wrapper">
+      <div *ngFor="let comic of character.comics" (click)="openRedirect(comic.link)" class="content">
+        <p>{{ comic.title }}</p>
+        <img [src]="comic.thumbNail" [alt]="comic.title" />
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="character.events.length" class="details-row">
+    <h2 class="details-title">List of Events</h2>
+    <div class="flex-wrapper">
+      <div *ngFor="let hqEvent of character.events" (click)="openRedirect(hqEvent.link)" class="content">
+        <p>{{ hqEvent.title }}</p>
+        <img [src]="hqEvent.thumbNail" [alt]="hqEvent.title" />
+      </div>
     </div>
   </div>
 </div>

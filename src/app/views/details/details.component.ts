@@ -15,7 +15,7 @@ import { FullCharacter } from '../../common/interfaces';
 export class DetailsComponent implements OnInit {
   private readonly _ngUnsubscribe$: Subject<any> = new Subject();
 
-  limit: number = 20;
+  limit: number = 10;
   page: number = 0;
   orderBy: string = '-modified';
 
