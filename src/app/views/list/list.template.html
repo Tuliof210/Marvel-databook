@@ -10,6 +10,9 @@
       <div [ngClass]="{'loader': inRequestProcess}">{{ inRequestProcess ? '' : 'See More' }}</div>
     </button>
   </div>
+  <div class="flex-container">
+    <a href="http://marvel.com">Data provided by Marvel. © 2021 MARVEL</a>
+  </div>
 </div>
 <div *ngIf="notFound" class="flex-container">
   <img src="../../../assets/icons/not-found.svg" alt="not found" class="not-found" />

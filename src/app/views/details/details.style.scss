@@ -8,7 +8,7 @@
   width: 100%;
   //-------------------
   background: $russian-violent;
-  background: linear-gradient(180deg, rgba(14, 16, 61, 1) 25%, rgba(43, 45, 66, 1) 100%);
+  background: linear-gradient(180deg, $russian-violent 25%, $space-cadent 100%);
 }
 .details-header {
   margin: auto;
@@ -52,6 +52,13 @@
     font-size: 40px;
     text-shadow: 3px 3px $yale-blue;
     text-decoration: underline;
+  }
+
+  a {
+    text-decoration: none;
+    color: $cultured;
+    font-size: 15px;
+    font-family: 'BebasNeue', sans-serif;
   }
 }
 
