@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Application link
 
 The project was deployed to [firebase](https://firebase.google.com/)
+
 Click [here](https://marvel-databook.web.app) to test the **_Marvel Databook_**
 
 ## Development server
