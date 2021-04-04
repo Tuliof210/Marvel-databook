@@ -4,9 +4,11 @@
 @import 'animations';
 
 .details-character {
+  position: relative;
   width: 100%;
   //-------------------
-  background-color: $russian-violent;
+  background: $russian-violent;
+  background: linear-gradient(180deg, rgba(14, 16, 61, 1) 25%, rgba(43, 45, 66, 1) 100%);
 }
 .details-header {
   margin: auto;
@@ -17,7 +19,7 @@
 }
 .details-title {
   margin: 0;
-  padding: 50px 0;
+  padding: 60px 0 40px;
   font-family: 'BebasNeue', sans-serif;
   font-size: 50px;
   color: $cultured;
@@ -33,7 +35,7 @@
 
 .details-description {
   margin: 0;
-  padding: 50px 0;
+  padding: 50px 0 20px;
   font-family: 'ComicNeue-Regular', sans-serif;
   font-size: 20px;
   color: $cultured;
@@ -42,25 +44,34 @@
 
 .details-row {
   width: 100%;
+  padding: 20px 0;
   text-align: center;
 
   .details-title {
-    padding: 60px 0 20px;
+    padding: 60px 0 40px;
+    font-size: 40px;
     text-shadow: 3px 3px $yale-blue;
+    text-decoration: underline;
   }
 }
 
-//-----------------------------
-.flex-wrapper {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-}
+.details-link {
+  outline: none;
+  text-decoration: none;
 
-.content {
-  width: 300px;
-  max-width: 300px;
-  background-color: #999;
-  margin: 5px;
+  color: $cultured;
+  text-shadow: 3px 3px $apple-red;
+  font-family: 'BebasNeue', sans-serif;
+  font-size: 30px;
+}
+.float-back {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+
+  img {
+    width: 30px;
+    height: 40px;
+  }
 }

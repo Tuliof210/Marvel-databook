@@ -1,0 +1,37 @@
+@import 'colors';
+@import 'fonts';
+@import 'elements';
+@import 'animations';
+
+//-----------------------------
+.flex-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.content {
+  width: 200px;
+  padding: 0 15px 10px;
+  cursor: pointer;
+}
+
+.content img {
+  width: 200px;
+  transition-property: all;
+  transition-duration: 500ms;
+}
+
+.content img:hover,
+.content img:active {
+  box-shadow: 5px 5px 10px $russian-violent;
+  width: 210px;
+}
+
+.content h4 {
+  margin: 5px 0 15px;
+  color: $cultured;
+  font-family: 'ComicNeue-Regular', sans-serif;
+  font-size: 15px;
+}

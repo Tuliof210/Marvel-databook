@@ -48,3 +48,28 @@
   -webkit-animation: spin 2s linear infinite;
   animation: spin 1s linear infinite;
 }
+
+/*SCROLLBAR*/
+/*====================================================*/
+.custom-scrollbar {
+  overflow-x: overlay;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  height: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: $apple-red;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  //margin-bottom: 79px;
+}
+.custom-scrollbar::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  //margin-top: 63px;
+}
+/*=====================================================*/

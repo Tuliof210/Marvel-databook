@@ -15,7 +15,7 @@ import { FullCharacter } from '../../common/interfaces';
 export class DetailsComponent implements OnInit {
   private readonly _ngUnsubscribe$: Subject<any> = new Subject();
 
-  limit: number = 10;
+  limit: number = 20;
   page: number = 0;
   orderBy: string = '-modified';
 
@@ -95,7 +95,7 @@ export class DetailsComponent implements OnInit {
             this.character[typeofData].push({
               id: item.id,
               title: item.title || 'Unknown',
-              thumbNail: this.getImageLink(item['thumbnail'], 'portrait_xlarge'),
+              thumbNail: this.getImageLink(item['thumbnail'], 'portrait_incredible'),
               link: item.urls ? item.urls[0]['url'] : '',
             });
           });
@@ -114,7 +114,7 @@ export class DetailsComponent implements OnInit {
     // List of Image Variants https://developer.marvel.com/documentation/images
   }
 
-  openRedirect(link: string) {
-    window.open(link, '_blank');
+  returnList() {
+    this.router.navigate(['/list']);
   }
 }

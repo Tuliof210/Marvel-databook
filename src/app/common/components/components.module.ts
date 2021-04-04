@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { CardComponent } from './card/card.component';
 import { FilterComponent } from './filter/filter.component';
+import { HorizontalRowComponent } from './horizontal-row/horizontal-row.component';
 
 @NgModule({
-  declarations: [CardComponent, FilterComponent],
+  declarations: [CardComponent, FilterComponent, HorizontalRowComponent],
   imports: [CommonModule, FormsModule],
-  exports: [CardComponent, FilterComponent],
+  exports: [CardComponent, FilterComponent, HorizontalRowComponent],
 })
 export class ComponentsModule {}
