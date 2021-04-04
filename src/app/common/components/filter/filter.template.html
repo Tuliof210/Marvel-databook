@@ -1,0 +1,51 @@
+<div id="filter-wrapper">
+  <div class="flex-container">
+    <img class="marvel-logo" src="../../../../assets/icons/Marvel_Logo.svg" alt="Marvel" />
+  </div>
+  <div id="filter-search" class="flex-container">
+    <input type="text" name="search" [(ngModel)]="textValue" class="default-input filter-input" />
+    <button (click)="sendKeyWord()" class="default-btn search-btn">
+      <img src="../../../../assets/icons/search.svg" alt="search" />
+    </button>
+  </div>
+  <div id="filter-controll" class="flex-container">
+    <div class="flex-container twin-row">
+      <button
+        class="default-btn twin-btn-01"
+        (click)="changeOrderBy(false)"
+        [ngClass]="{'btn-on': !updated, 'btn-off': updated}"
+      >
+        A-Z
+      </button>
+      <button
+        class="default-btn twin-btn-02"
+        (click)="changeOrderBy(true)"
+        [ngClass]="{'btn-on': updated, 'btn-off': !updated}"
+      >
+        Popular
+      </button>
+    </div>
+    <div class="flex-container twin-row">
+      <button
+        class="default-btn twin-btn-01"
+        (click)="changeDownUpOrder(false)"
+        [ngClass]="{'btn-on': !desc, 'btn-off': desc}"
+      >
+        asc
+      </button>
+      <button
+        class="default-btn twin-btn-02"
+        (click)="changeDownUpOrder(true)"
+        [ngClass]="{'btn-on': desc, 'btn-off': !desc}"
+      >
+        desc
+      </button>
+    </div>
+  </div>
+  <div *ngIf="currentFilter.nameStartsWith" class="flex-container search-flag">
+    <button (click)="resetSearchTerm()" class="default-btn label-search">{{ displayQuery }}</button>
+    <button (click)="resetSearchTerm()" class="default-btn clear-search">
+      <img src="../../../../assets/icons/cancel.svg" alt="cancel" />
+    </button>
+  </div>
+</div>

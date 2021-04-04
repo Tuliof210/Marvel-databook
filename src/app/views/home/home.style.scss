@@ -1,0 +1,59 @@
+@import 'colors';
+@import 'fonts';
+@import 'elements';
+@import 'animations';
+
+//-----------------------------
+.home-wrapper {
+  background-color: $russian-violent;
+  background: linear-gradient(0deg, $russian-violent 25%, $rich-black 100%);
+  width: 100vw;
+  height: 100vh;
+}
+.home-start {
+  text-align: center;
+  position: absolute;
+  width: 90vw;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  img {
+    width: 60%;
+    max-width: 720px;
+  }
+  h3 {
+    cursor: pointer;
+    margin: 20px 0;
+    width: 100%;
+    text-align: center;
+    color: $cultured;
+    font-family: 'BebasNeue', sans-serif;
+
+    line-height: 1;
+    letter-spacing: 1px;
+    font-size: 25px;
+  }
+}
+
+.home-footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  a {
+    text-decoration: none;
+    color: $cultured;
+    font-size: 15px;
+    font-family: 'BebasNeue', sans-serif;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .home-start h3 {
+    margin: 10px 0;
+    font-size: 20px;
+  }
+}

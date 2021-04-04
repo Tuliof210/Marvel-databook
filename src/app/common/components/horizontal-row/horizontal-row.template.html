@@ -1,0 +1,6 @@
+<div class="flex-wrapper custom-scrollbar">
+  <div *ngFor="let data of fullData" (click)="openRedirect(data.link)" class="content">
+    <img [src]="data.thumbNail" [alt]="data.title" />
+    <h4>{{ data.title }}</h4>
+  </div>
+</div>

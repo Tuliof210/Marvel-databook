@@ -1,0 +1,19 @@
+<component-filter (customQuery)="catchFilters($event)"></component-filter>
+<div *ngIf="marvelCharacters.length" class="list-wrapper">
+  <div class="list-grid">
+    <div *ngFor="let char of marvelCharacters" class="list-content">
+      <component-card [characterData]="char" (click)="seeMore(char.id)"></component-card>
+    </div>
+  </div>
+  <div class="list-footer">
+    <button *ngIf="showBTN" (click)="requestMarvelCharacters()" class="default-btn loadmore-btn">
+      <div [ngClass]="{'loader': inRequestProcess}">{{ inRequestProcess ? '' : 'See More' }}</div>
+    </button>
+  </div>
+  <div class="flex-container">
+    <a href="http://marvel.com">Data provided by Marvel. © 2021 MARVEL</a>
+  </div>
+</div>
+<div *ngIf="notFound" class="flex-container">
+  <img src="../../../assets/icons/not-found.svg" alt="not found" class="not-found" />
+</div>

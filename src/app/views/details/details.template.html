@@ -1,0 +1,23 @@
+<div class="details-character">
+  <div (click)="returnList()" class="float-back">
+    <img src="../../../assets/icons/back.svg" alt="back" />
+  </div>
+  <div class="details-header">
+    <h1 class="details-title">{{ character.name }}</h1>
+    <img class="details-picture" [src]="character.thumbNail" [alt]="character.name" />
+    <h2 class="details-description">{{ character.description }}</h2>
+    <a [href]="character.link" target="_blank" class="details-link">details</a>
+  </div>
+  <div *ngIf="character.comics.length" class="details-row">
+    <h2 class="details-title">List of Comics</h2>
+    <component-horizontal-row [fullData]="character.comics"></component-horizontal-row>
+  </div>
+
+  <div *ngIf="character.events.length" class="details-row">
+    <h2 class="details-title">List of Events</h2>
+    <component-horizontal-row [fullData]="character.events"></component-horizontal-row>
+  </div>
+  <div class="details-row">
+    <a href="http://marvel.com">Data provided by Marvel. © 2021 MARVEL</a>
+  </div>
+</div>

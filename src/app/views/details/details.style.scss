@@ -1,0 +1,84 @@
+@import 'colors';
+@import 'fonts';
+@import 'elements';
+@import 'animations';
+
+.details-character {
+  position: relative;
+  width: 100%;
+  //-------------------
+  background: $russian-violent;
+  background: linear-gradient(180deg, $russian-violent 25%, $space-cadent 100%);
+}
+.details-header {
+  margin: auto;
+  text-align: center;
+  max-width: 700px;
+  width: 50%;
+  min-width: 300px;
+}
+.details-title {
+  margin: 0;
+  padding: 60px 0 40px;
+  font-family: 'BebasNeue', sans-serif;
+  font-size: 50px;
+  color: $cultured;
+  text-shadow: 3px 3px $apple-red;
+}
+
+.details-picture {
+  width: 400px;
+  max-width: 100%;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.details-description {
+  margin: 0;
+  padding: 50px 0 20px;
+  font-family: 'ComicNeue-Regular', sans-serif;
+  font-size: 20px;
+  color: $cultured;
+  text-align: center;
+}
+
+.details-row {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+
+  .details-title {
+    padding: 60px 0 40px;
+    font-size: 40px;
+    text-shadow: 3px 3px $yale-blue;
+    text-decoration: underline;
+  }
+
+  a {
+    text-decoration: none;
+    color: $cultured;
+    font-size: 15px;
+    font-family: 'BebasNeue', sans-serif;
+  }
+}
+
+.details-link {
+  outline: none;
+  text-decoration: none;
+
+  color: $cultured;
+  text-shadow: 3px 3px $apple-red;
+  font-family: 'BebasNeue', sans-serif;
+  font-size: 30px;
+}
+.float-back {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+
+  img {
+    width: 30px;
+    height: 40px;
+  }
+}

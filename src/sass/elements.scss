@@ -1,0 +1,76 @@
+@import 'colors';
+@import 'fonts';
+@import 'animations';
+
+.default-btn {
+  cursor: pointer;
+  position: relative;
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 10px;
+  border-radius: 10px;
+  //----------------------
+  color: $cultured;
+  font-family: 'BebasNeue', sans-serif;
+  background-color: $apple-red;
+
+  transition-property: all;
+  transition-duration: 300ms;
+}
+.default-btn:hover {
+  filter: brightness(0.9);
+  box-shadow: 5px 3px 15px 0px rgb(0, 0, 0, 0.2);
+}
+
+.default-input {
+  outline: none;
+  border: none;
+  padding: 0 20px;
+}
+
+.loader {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top: 2px solid $cultured;
+  border-left: 2px solid $cultured;
+
+  width: 20px;
+  height: 20px;
+
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1s linear infinite;
+}
+
+/*SCROLLBAR*/
+/*====================================================*/
+.custom-scrollbar {
+  overflow-x: overlay;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  height: 10px;
+  background-color: rgb(255, 0, 0, 0.1);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: $apple-red;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-track-piece:end {
+  background: transparent;
+  //margin-bottom: 79px;
+}
+.custom-scrollbar::-webkit-scrollbar-track-piece:start {
+  background: transparent;
+  //margin-top: 63px;
+}
+/*=====================================================*/
